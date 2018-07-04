@@ -1,0 +1,10 @@
+#portfolio .badge-warning{
+margin-top:4px;
+font-size:100%;	
+}
+
+.list-group-item.active{
+background-color: gainsboro;
+    border-color: beige;	
+}
+
