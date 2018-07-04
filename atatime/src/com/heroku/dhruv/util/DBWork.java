@@ -93,7 +93,7 @@ public class DBWork {
 			
 			if(rs1!=null)
 			while (rs1.next()) {
-				if(rs1.getString(columnName).equals(screenName+"::"+userName))
+				if(rs1.getString(columnName)!=null && rs1.getString(columnName).equals(screenName+"::"+userName))
 				{
 					addToDb=false;
 					break;

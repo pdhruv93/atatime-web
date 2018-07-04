@@ -386,7 +386,7 @@
 									
 									window.setInterval(function(){
 										 hitDB();
-										}, 20000);
+										}, 15000);
 										
 									},
 								});
