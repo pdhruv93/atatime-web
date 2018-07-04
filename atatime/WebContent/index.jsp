@@ -324,6 +324,12 @@
 							function hitDB() {
 								$("#current-users").empty();
 								var curActivity = $("#current-act").html();
+								
+								if (your_string.indexOf('@') > -1)
+									{
+									curActivity = curActivity.replace("@", "in");
+									}
+								
 								var email = $("#user-email").html();
 								var name = $("#user-name").html();
 								
@@ -358,6 +364,13 @@
 
 								$("#current-users").empty();
 								var curActivity = $("#current-act").html();
+								
+								
+								if (your_string.indexOf('@') > -1)
+									{
+									curActivity = curActivity.replace("@", "in");
+									}
+								
 								var email = $("#user-email").html();
 								var name = $("#user-name").html();
 
