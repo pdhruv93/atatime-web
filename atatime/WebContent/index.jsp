@@ -75,7 +75,7 @@
 			document.getElementById("signin-status").innerHTML = "in";
 
 			document.getElementById("logo").style.visibility = "visible";
-			document.getElementById("feedback").style.visibility = "visible";
+			//document.getElementById("feedback").style.visibility = "visible";
 
 			document.getElementById("portfolio").style.visibility = "visible";
 			document.getElementById("bookmarks-import").style.visibility = "visible";
