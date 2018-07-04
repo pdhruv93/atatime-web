@@ -236,7 +236,7 @@
 				<h2 class="section-heading text-white">See the Trends</h2>
 				<hr class="light">
 				<p class="text-faded">
-					@@time is all about this. Grab a Coffee while we are populating <b id="blink"
+					@@time is all about this. Grab a Coffee while we are populating <b class="blink_me" id="blink"
 						style="font-weight: 900; font-size: 23px;">Live</b> trends for
 					you!
 				</p>
