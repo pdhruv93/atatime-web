@@ -325,7 +325,7 @@
 								$("#current-users").empty();
 								var curActivity = $("#current-act").html();
 								
-								if (your_string.indexOf('@') > -1)
+								if (curActivity.indexOf('@') > -1)
 									{
 									curActivity = curActivity.replace("@", "in");
 									}
@@ -366,7 +366,7 @@
 								var curActivity = $("#current-act").html();
 								
 								
-								if (your_string.indexOf('@') > -1)
+								if (curActivity.indexOf('@') > -1)
 									{
 									curActivity = curActivity.replace("@", "in");
 									}
