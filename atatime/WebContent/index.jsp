@@ -233,12 +233,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 mx-auto text-center">
-				<h2 class="section-heading text-white">See the Trends</h2>
+				<h2 class="section-heading text-white">See other users</h2>
 				<hr class="light">
 				<p class="text-faded">
-					@@time is all about this. Grab a Coffee while we are populating <b class="blink_me" id="blink"
-						style="font-weight: 900; font-size: 23px;">Live</b> trends for
-					you!
+					@@time is all about this. Grab a Coffee while we are populating other users doing same activity as you!!<b class="blink_me" id="blink"
+						style="font-weight: 900; font-size: 23px;">Live</b>
 				</p>
 
 				<br>
