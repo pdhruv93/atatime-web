@@ -395,6 +395,28 @@
 									},
 								});
 							});
+							
+							
+							$("#start-db-cron").click(function() {
+
+								$.ajax({
+									url : "StartCron",
+									type : 'POST',
+									data : {
+									},
+									success : function(response) {
+									alert('cron started');
+									},
+								});
+							});
+							
+							
+							
+							
+							
+							
+							
+							
 
 						});
 	</script>
@@ -404,7 +426,7 @@
 
 
 	<!-- <button onclick="myFunction()">Sign Out</button> -->
-
+	<a id="start-db-cron" style="display:none">Start Cron</a>
 	<script>
 		function myFunction() {
 			gapi.auth2.getAuthInstance().disconnect();
