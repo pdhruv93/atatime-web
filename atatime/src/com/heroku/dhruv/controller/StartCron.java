@@ -18,6 +18,7 @@ import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
 
 import com.heroku.dhruv.util.DBJob;
+import com.heroku.dhruv.util.DBWork;
 
 @WebServlet("/StartCron")
 public class StartCron extends HttpServlet {
@@ -26,8 +27,9 @@ public class StartCron extends HttpServlet {
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
- 
+    	//DBWork.startCron();
 
+    	
     	JobDetail job = JobBuilder.newJob(DBJob.class)
 		.withIdentity("dummyJobName", "group1").build();
 
@@ -36,8 +38,7 @@ public class StartCron extends HttpServlet {
 		.newTrigger()
 		.withIdentity("dummyTriggerName", "group1")
 		.withSchedule(
-			CronScheduleBuilder.cronSchedule("0 0/1 * * * ?"))
-		.build();
+			CronScheduleBuilder.cronSchedule("0 2 * * *")).build();
     	
     	Scheduler scheduler;
 		try {
@@ -50,6 +51,8 @@ public class StartCron extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+    	
+    	
     	
     	
     }

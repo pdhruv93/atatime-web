@@ -169,4 +169,42 @@ public class DBWork {
 	}
 	
 	
+	public static void startCron()
+	{
+		ResultSet rs=null;
+		
+		String tablesToTruncate="";
+		
+		try {
+			Statement stmt1 = connection.createStatement();
+			rs = stmt1.executeQuery("SELECT tablename, tableowner FROM pg_catalog.pg_tables");
+			
+		
+			
+		while (rs.next()) {
+			
+			if(rs.getString("tableowner").equals("twgaonnegohdug"))
+			{
+				tablesToTruncate+=rs.getString("tablename")+",";
+			}
+			
+		}
+		
+		tablesToTruncate = tablesToTruncate.substring(0, tablesToTruncate.length() - 1);
+		
+		System.out.println("Tables deleted::"+tablesToTruncate);
+		
+		stmt1.executeUpdate("TRUNCATE " + tablesToTruncate);
+		
+		
+		}catch(Exception exc)
+		{
+			exc.printStackTrace();
+		}
+		
+		
+		
+	}
+	
+	
 }

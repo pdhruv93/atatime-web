@@ -9,7 +9,8 @@ public class DBJob implements Job
 	public void execute(JobExecutionContext context)
 	throws JobExecutionException {
 		
-		System.out.println("Hello Quartz!");	
+		System.out.println("Starting Cron Job for clearing DB Tables");	
+		DBWork.startCron();
 		
 	}
 	
