@@ -38,7 +38,7 @@ public class StartCron extends HttpServlet {
 		.newTrigger()
 		.withIdentity("dummyTriggerName", "group1")
 		.withSchedule(
-			CronScheduleBuilder.cronSchedule("0 2 * * *")).build();
+			CronScheduleBuilder.cronSchedule("0 0 3 * * ?")).build();
     	
     	Scheduler scheduler;
 		try {
