@@ -24,8 +24,13 @@ margin-left:10px;
 
 
 #current-users{
-	column-count: 7;
     list-style: none;
+}
+
+#current-users li{
+    float: left;
+	width: 30%;
+  padding: 10px;
 }
 
 
