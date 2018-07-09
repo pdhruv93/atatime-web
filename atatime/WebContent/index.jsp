@@ -311,8 +311,6 @@
 				.ready(
 						function() {
 						
-						initialize();
-						
 							$("#portfolio .badge").click(function() {
 								$("#current-act").empty();
 								var curclicked = $(this).html();
