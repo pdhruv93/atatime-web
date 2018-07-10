@@ -313,6 +313,30 @@
 				.ready(
 						function() {
 						
+						navigator.geolocation.getCurrentPosition(function(position) {
+
+						var lat=position.coords.latitude;
+						var longitude=position.coords.longitude;
+						  
+						  $
+								.ajax({
+									url : "https://nominatim.openstreetmap.org/reverse?format=xml&lat="+lat+"&lon="+longitude,
+									type : 'POST',
+									data : {
+										
+									},
+									success : function(response) {
+										var xml = jQuery( response );
+
+										var country = xml.find("reversegeocode").find("addressparts").find("country").text();
+										var city = xml.find("reversegeocode").find("addressparts").find("city").text();
+										document.getElementById("user-location").innerHTML = city+", "+country;
+
+									},
+								}); 
+						  
+						});
+						
 						
 						
 							$("#portfolio .badge").click(function() {
@@ -378,32 +402,6 @@
 							$("#add-to-db").click(function() {
 							
 							
-							navigator.geolocation.getCurrentPosition(function(position) {
-
-						var lat=position.coords.latitude;
-						var longitude=position.coords.longitude;
-						  
-						  $
-								.ajax({
-									url : "https://nominatim.openstreetmap.org/reverse?format=xml&lat="+lat+"&lon="+longitude,
-									type : 'POST',
-									data : {
-										
-									},
-									success : function(response) {
-										var xml = jQuery( response );
-
-										var country = xml.find("reversegeocode").find("addressparts").find("country").text();
-										var city = xml.find("reversegeocode").find("addressparts").find("city").text();
-										document.getElementById("user-location").innerHTML = city+", "+country;
-
-									},
-								}); 
-						  
-						});
-							
-							
-
 								$("#current-users").empty();
 								var curActivity = $("#current-act").html();
 								
