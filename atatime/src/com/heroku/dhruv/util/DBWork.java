@@ -86,29 +86,41 @@ public class DBWork {
 					PreparedStatement stmt1=connection.prepareStatement("CREATE TABLE "+activity+"(seventoten text,eleventofourteen text,fifteentoeighteen text,nineteentotwentytwo text,twentyhreetosix text);");
 					stmt1.executeUpdate();
 				}
-			boolean addToDb=true;
 			
+			boolean userExists=false;
 			Statement stmt1=connection.createStatement();
 			ResultSet rs1 = stmt1.executeQuery("SELECT "+columnName+" FROM "+activity);
 			
 			if(rs1!=null)
 			while (rs1.next()) {
-				if(rs1.getString(columnName)!=null && rs1.getString(columnName).equals(screenName+"::"+userName+"::"+location))
+				if(rs1.getString(columnName)!=null)
 				{
-					addToDb=false;
-					break;
+					String screeNameindb=rs1.getString(columnName).split("::")[0];
+					String userNameindb=rs1.getString(columnName).split("::")[1];
+					
+					if(screeNameindb.equals(screeNameindb) && userNameindb.equals(userName))
+					{
+						//user exists..delete it
+						userExists=true;
+						break;
+					}
+					
 				}
 			}
+			
+			if(userExists)
+			{
+				Statement stmt2=connection.createStatement();
+				stmt2.executeUpdate("DELETE FROM "+activity+" WHERE "+columnName+" like '"+screenName+"::"+userName+"%'");
+			}
+			
 			
 			if(location==null)
 				location="";
 			
-			if(addToDb)
-			{
 				PreparedStatement stmt=connection.prepareStatement("INSERT INTO "+activity+"("+columnName+") VALUES(?)");
 				stmt.setString(1, screenName+"::"+userName+"::"+location);
 				stmt.executeUpdate();
-			}
 			
 			
 			
@@ -149,8 +161,6 @@ public class DBWork {
 			else if(currHour>=0 && currHour<=6)
 				columnName="twentyhreetosix";
 			
-			
-			System.out.println("Current Time:::::"+currHour);
 			
 			Statement stmt=connection.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT "+columnName+" FROM "+activity);
