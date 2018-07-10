@@ -53,7 +53,7 @@
 			<p id="name"></p> 
 			<div id="status"></div> -->
 
-<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script language="JavaScript" src="https://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 
 	<script type="text/javascript"
 		src="https://www.gstatic.com/charts/loader.js"></script>
@@ -363,7 +363,7 @@
 																.append(
 																		"<li><figure><img class='round-profile-pic' src='https://pikmail.herokuapp.com/"
 																				+ screenName
-																				+ "@gmail.com?size=50' alt=''><figcaption>"+name+""+location"</figcaption></figure></li>");
+																				+ "@gmail.com?size=50' alt=''><figcaption>"+name+""+location+"</figcaption></figure></li>");
 													}
 													}
 
