@@ -53,8 +53,6 @@
 			<p id="name"></p> 
 			<div id="status"></div> -->
 
-<script language="JavaScript" src="https://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
-
 	<script type="text/javascript"
 		src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -235,7 +233,9 @@
 	</div>
 	</section>
 
-	<section class="bg-primary" id="bookmarks-import" style="visibility:hidden;">
+
+<!-- add visibility:hidden -->
+	<section class="bg-primary" id="bookmarks-import" style="visibility:hidden">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 mx-auto text-center">
@@ -386,7 +386,16 @@
 								var email = $("#user-email").html();
 								var name = $("#user-name").html();
 								
-								var location=geoplugin_region()+", "+geoplugin_countryName();
+								if (navigator.geolocation) {
+									        
+									        alert(position.coords.latitude) ;
+    											alert(position.coords.longitude);
+									        
+									    } else { 
+									        console.log ("Geolocation is not supported by this browser.");
+									    }
+								
+								var location="";
 
 								$.ajax({
 									url : "AddActivityToDB",
