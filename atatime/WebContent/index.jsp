@@ -403,12 +403,6 @@
 						});
 							
 							
-							
-							
-							
-							
-							
-							
 
 								$("#current-users").empty();
 								var curActivity = $("#current-act").html();
@@ -423,16 +417,6 @@
 								var name = $("#user-name").html();
 								var location = $("#user-location").html();
 								
-								if (navigator.geolocation) {
-									        
-									        alert(position.coords.latitude) ;
-    											alert(position.coords.longitude);
-									        
-									    } else { 
-									        console.log ("Geolocation is not supported by this browser.");
-									    }
-								
-								var location="";
 
 								$.ajax({
 									url : "AddActivityToDB",
