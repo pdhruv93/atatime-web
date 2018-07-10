@@ -381,7 +381,7 @@
 														var name=response[i].split("::")[1];
 														var location=response[i].split("::")[2];
 														
-													if(!location)
+													if(location!=null && location!="")
 													{
 														location="@"+location;
 													}
