@@ -93,7 +93,7 @@ public class DBWork {
 			
 			if(rs1!=null)
 			while (rs1.next()) {
-				if(rs1.getString(columnName)!=null && rs1.getString(columnName).contains(screenName+"::"+userName))
+				if(rs1.getString(columnName)!=null && rs1.getString(columnName).equals(screenName+"::"+userName+"::"+location))
 				{
 					addToDb=false;
 					break;
@@ -102,8 +102,6 @@ public class DBWork {
 			
 			if(location==null)
 				location="";
-			
-			System.out.println(":::::::"+location);
 			
 			if(addToDb)
 			{
