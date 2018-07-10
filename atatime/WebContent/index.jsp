@@ -381,11 +381,11 @@
 							navigator.geolocation.getCurrentPosition(function(position) {
 
 						var lat=position.coords.latitude;
-						var long=position.coords.longitude;
+						var longitude=position.coords.longitude;
 						  
 						  $
 								.ajax({
-									url : "https://nominatim.openstreetmap.org/reverse?format=xml&lat="+lat+"&lon="+long,
+									url : "https://nominatim.openstreetmap.org/reverse?format=xml&lat="+lat+"&lon="+longitude,
 									type : 'POST',
 									data : {
 										
