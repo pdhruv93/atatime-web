@@ -291,6 +291,7 @@
 
 	<div id="user-email" style="visibility: hidden;"></div>
 	<div id="user-name" style="visibility: hidden;"></div>
+	<div id="user-location" style="visibility: hidden;"></div>
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
@@ -311,6 +312,8 @@
 		$(document)
 				.ready(
 						function() {
+						
+						
 						
 							$("#portfolio .badge").click(function() {
 								$("#current-act").empty();
@@ -373,6 +376,39 @@
 							}
 
 							$("#add-to-db").click(function() {
+							
+							
+							navigator.geolocation.getCurrentPosition(function(position) {
+
+						var lat=position.coords.latitude;
+						var long=position.coords.longitude;
+						  
+						  $
+								.ajax({
+									url : "https://nominatim.openstreetmap.org/reverse?format=xml&lat="+lat+"&lon="+long,
+									type : 'POST',
+									data : {
+										
+									},
+									success : function(response) {
+										var xml = jQuery( response );
+
+										var country = xml.find("reversegeocode").find("addressparts").find("country").text();
+										var city = xml.find("reversegeocode").find("addressparts").find("city").text();
+										document.getElementById("user-location").innerHTML = city+", "+country;
+
+									},
+								}); 
+						  
+						});
+							
+							
+							
+							
+							
+							
+							
+							
 
 								$("#current-users").empty();
 								var curActivity = $("#current-act").html();
@@ -385,6 +421,7 @@
 								
 								var email = $("#user-email").html();
 								var name = $("#user-name").html();
+								var location = $("#user-location").html();
 								
 								if (navigator.geolocation) {
 									        
