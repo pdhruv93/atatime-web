@@ -53,6 +53,8 @@
 			<p id="name"></p> 
 			<div id="status"></div> -->
 
+<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+
 	<script type="text/javascript"
 		src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -61,7 +63,8 @@
 			// window.location.href='success.jsp';
 			var profile = googleUser.getBasicProfile();
 			var imagurl = profile.getImageUrl();
-			var name = profile.getName();
+			//var name = profile.getName();
+			var name = profile.getGivenName();
 			var email = profile.getEmail();
 			document.getElementById("myImg").src = imagurl;
 			//document.getElementById("name1").innerHTML = name;
@@ -349,12 +352,18 @@
 													{
 														var screenName=response[i].split("::")[0];
 														var name=response[i].split("::")[1];
+														var location=response[i].split("::")[2];
+														
+													if(!location)
+													{
+														location="@"+location;
+													}
 														
 														$("#current-users")
 																.append(
 																		"<li><figure><img class='round-profile-pic' src='https://pikmail.herokuapp.com/"
 																				+ screenName
-																				+ "@gmail.com?size=50' alt=''><figcaption>"+name+"</figcaption></figure></li>");
+																				+ "@gmail.com?size=50' alt=''><figcaption>"+name+""+location"</figcaption></figure></li>");
 													}
 													}
 
@@ -376,6 +385,8 @@
 								
 								var email = $("#user-email").html();
 								var name = $("#user-name").html();
+								
+								var location=geoplugin_region()+", "+geoplugin_countryName();
 
 								$.ajax({
 									url : "AddActivityToDB",
@@ -383,7 +394,8 @@
 									data : {
 										activity : curActivity,
 										userEmail : email,
-										userName : name
+										userName : name,
+										location: location
 									},
 									success : function(response) {
 									hitDB();

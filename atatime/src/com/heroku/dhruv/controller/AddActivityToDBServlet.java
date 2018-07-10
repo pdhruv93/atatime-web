@@ -25,8 +25,9 @@ public class AddActivityToDBServlet extends HttpServlet {
     String activity=request.getParameter("activity");
     String userId=request.getParameter("userEmail");
     String userName=request.getParameter("userName");
+    String location=request.getParameter("location");
     
-    DBWork.addActivityToDB(activity,userId,userName);
+    DBWork.addActivityToDB(activity,userId,userName,location);
     
     }
 

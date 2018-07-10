@@ -48,7 +48,7 @@ public class DBWork {
 		}
 	}
 
-	public static void addActivityToDB(String activity, String userId, String userName) {
+	public static void addActivityToDB(String activity, String userId, String userName, String location) {
 		try {
 			String columnName="";
 			
@@ -93,17 +93,20 @@ public class DBWork {
 			
 			if(rs1!=null)
 			while (rs1.next()) {
-				if(rs1.getString(columnName)!=null && rs1.getString(columnName).equals(screenName+"::"+userName))
+				if(rs1.getString(columnName)!=null && rs1.getString(columnName).contains(screenName+"::"+userName))
 				{
 					addToDb=false;
 					break;
 				}
 			}
 			
+			if(location==null)
+				location="";
+			
 			if(addToDb)
 			{
 				PreparedStatement stmt=connection.prepareStatement("INSERT INTO "+activity+"("+columnName+") VALUES(?)");
-				stmt.setString(1, screenName+"::"+userName);
+				stmt.setString(1, screenName+"::"+userName+"::"+location);
 				stmt.executeUpdate();
 			}
 			
