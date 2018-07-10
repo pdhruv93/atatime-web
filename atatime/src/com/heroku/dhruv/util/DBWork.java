@@ -103,6 +103,8 @@ public class DBWork {
 			if(location==null)
 				location="";
 			
+			System.out.println(":::::::"+location);
+			
 			if(addToDb)
 			{
 				PreparedStatement stmt=connection.prepareStatement("INSERT INTO "+activity+"("+columnName+") VALUES(?)");
