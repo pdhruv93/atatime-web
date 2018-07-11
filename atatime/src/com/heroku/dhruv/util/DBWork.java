@@ -121,7 +121,7 @@ public class DBWork {
 			
 			boolean userdetailsexists=false;
 			Statement stmt7=connection.createStatement();
-			ResultSet rs7 = stmt1.executeQuery("SELECT details from userstrack");
+			ResultSet rs7 = stmt7.executeQuery("SELECT details from userstrack");
 			
 			if(rs7!=null)
 			while (rs7.next()) {
@@ -133,7 +133,7 @@ public class DBWork {
 			}
 			
 			
-			if(userdetailsexists=false)
+			if(userdetailsexists==false)
 			{
 				
 				PreparedStatement stmt3=connection.prepareStatement("INSERT INTO userstrack(details) VALUES(?)");
