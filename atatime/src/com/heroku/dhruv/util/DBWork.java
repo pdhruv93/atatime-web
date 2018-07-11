@@ -118,6 +118,30 @@ public class DBWork {
 			if(location==null)
 				location="";
 			
+			
+			boolean userdetailsexists=false;
+			Statement stmt7=connection.createStatement();
+			ResultSet rs7 = stmt1.executeQuery("SELECT details from userstrack");
+			
+			if(rs7!=null)
+			while (rs7.next()) {
+				if(rs7.getString("details")!=null && rs7.getString("details").equals(screenName+":"+activity))
+				{
+					userdetailsexists=true;
+					break;
+				}
+			}
+			
+			
+			if(userdetailsexists=false)
+			{
+				
+				PreparedStatement stmt3=connection.prepareStatement("INSERT INTO userstrack(details) VALUES(?)");
+				stmt3.setString(1, screenName+":"+activity);
+				stmt3.executeUpdate();
+			}
+			
+			
 				PreparedStatement stmt=connection.prepareStatement("INSERT INTO "+activity+"("+columnName+") VALUES(?)");
 				stmt.setString(1, screenName+"::"+userName+"::"+location);
 				stmt.executeUpdate();
