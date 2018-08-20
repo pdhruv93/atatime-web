@@ -188,7 +188,7 @@ public class DBWork {
 				columnName="twentyhreetosix";
 			
 			
-			Statement stmt=connection.createStatement();
+			Statement stmt=connection2.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT "+columnName+" FROM "+activity);
 			
 			if(rs!=null)
