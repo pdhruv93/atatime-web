@@ -189,6 +189,7 @@ public class DBWork {
 			
 			
 			Statement stmt=connection2.createStatement();
+			Statement stmt7=connection2.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT "+columnName+" FROM "+activity);
 			
 			if(rs!=null)
@@ -200,7 +201,7 @@ public class DBWork {
 				String mobileNumber="";
 				String chat="";
 				
-				ResultSet rs1 = stmt.executeQuery("SELECT * FROM usermobnumber where email='"+userName+"'");
+				ResultSet rs1 = stmt7.executeQuery("SELECT * FROM usermobnumber where email='"+userName+"'");
 				
 				while(rs1.next())
 				{
