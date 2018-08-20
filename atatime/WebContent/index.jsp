@@ -281,7 +281,7 @@
 			<div class="col-lg-8 mx-auto text-center">
 				<h2 class="section-heading">Your Profile</h2>
 				<hr class="primary">
-				<p>Mark your preference if you wish that other users can chat on Whatsapp with you.<br>
+				<p class="text-faded">Mark your preference if you wish that other users can chat on Whatsapp with you.<br>
 				You always have an option to change it later.<br><br>
 				Other users who have enabled <b>CHAT ON WHATSAPP</b> feature have their names in Green <br>
 				Just click on their profile image and you are ready to go. Just don't spam anyone.<br>
@@ -296,7 +296,8 @@
 					  <input type="submit" class="badge badge-success" value="Yes I am in!!">
 				</form>
 				
-				<a id="no-whatsapp" class="btn btn-default btn-xl js-scroll-trigger">No. Maybe Later</a>
+				<br><br>
+				<a id="no-whatsapp" class="btn btn-default btn-xl js-scroll-trigger" style="cursor: pointer;">Disable this feature</a>
 				
 			</div>
 		</div>
