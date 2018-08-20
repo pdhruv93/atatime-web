@@ -208,8 +208,8 @@ public class DBWork {
 				
 				while(rs1.next())
 				{
-					mobileNumber=rs.getString("mobnumber");
-					chat=rs.getString("chat");
+					mobileNumber=rs1.getString("mobnumber");
+					chat=rs1.getString("chat");
 					break;
 				}
 				
