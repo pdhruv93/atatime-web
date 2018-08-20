@@ -124,6 +124,9 @@
 
 				<li class="nav-item"><a class="nav-link js-scroll-trigger"
 					href="#about">About App</a></li>
+					
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+					href="#your-profile">Your Profile</a></li>
 				<!-- <li class="nav-item"><a id="feedback"
 					class="nav-link js-scroll-trigger" href="#contact"
 					style="visibility: hidden;">Feedback</a></li> -->
@@ -163,6 +166,12 @@
 					mark your current activity with Tags. <br>and check how many
 					others are doing the same activity<br>And thats it. <br>@@time
 					is ready!!
+				</p>
+				<p>
+				with the new upgrade, you can even chat with the other users on Whatsapp. </br>
+				other users who have enabled <b>CHAT ON WHATSAPP</b> feature on their profile would have a green border around their profile image. <br>
+				Just click on their profile image and you are ready to go. Just don't spam anyone.<br>
+				To set your chat on whatsapp preference go to your profile section at the top.
 				</p>
 				<a id="start-here" class="btn btn-default btn-xl js-scroll-trigger">Can't
 					Wait.Start Here!!!</a>
@@ -262,16 +271,28 @@
 
 
 
-	<!--<section id="contact">
+	<section id="your-profile">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 mx-auto text-center">
-				<h2 class="section-heading">Let's Get In Touch!</h2>
+				<h2 class="section-heading">Your Profile</h2>
 				<hr class="primary">
-				<p>With our sole developer putting in a lot of efforts, he
-					promises us to bring new features soon!!</p>
+				<p>Mark your preference if you wish that other users can chat on Whatsapp with you.<br>
+				You always have an option to change it later.
+				</p>
 				<br>
-				<p>Developed by Dhruv Pandey</p>
+				
+				<form>
+					  <input id="whatsappnum" required >
+					
+					  <input type="submit" class="badge badge-success" value="Yes I am in!!">
+				</form>
+				
+				
+				
+				
+				<span class="badge badge-danger">No. Maybe Later</span>
+				
 			</div>
 		</div>
 		<div class="row">
@@ -287,7 +308,7 @@
 			</div>
 		</div>
 	</div>
-	</section>-->
+	</section>
 
 	<div id="user-email" style="visibility: hidden;"></div>
 	<div id="user-name" style="visibility: hidden;"></div>
