@@ -275,7 +275,7 @@
 
 
 
-	<section id="your-profile" style="background-color:rgb(0, 123, 255)">
+	<section id="your-profile" style="background-color:rgb(0, 123, 255)" class="section-heading text-white">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 mx-auto text-center">
@@ -290,11 +290,9 @@
 				</p>
 				<br>
 				
-				<form>
 					  <input id="whatsappnum" required >
-					
-					  <input type="submit" class="badge badge-success" value="Yes I am in!!">
-				</form>
+					<br>
+					<a id="add-whatsapp" class="btn btn-default btn-xl js-scroll-trigger" style="cursor: pointer;">Enable this feature</a>
 				
 				<br><br>
 				<a id="no-whatsapp" class="btn btn-default btn-xl js-scroll-trigger" style="cursor: pointer;">Disable this feature</a>
@@ -400,17 +398,38 @@
 														var screenName=response[i].split("::")[0];
 														var name=response[i].split("::")[1];
 														var location=response[i].split("::")[2];
+														var mobnumber=response[i].split("::")[3];
 														
 													if(location!=null && location!="")
 													{
 														location="@"+location;
 													}
 														
+														
+														if(mobnumber!=null && mobnumber!="")
+														{
+														
+														var chattext="https://wa.me/"+mobnumber+"?text=Hi!"+name+"%20this%20side.%20I%20saw%20you%20are%20also%20"+curActivity+".%20Wanna%20chat!!";
+														
+														$("#current-users")
+																.append(
+																		"<a href='"+chattext+"'><li><figure><img class='round-profile-pic' src='https://pikmail.herokuapp.com/"
+																				+ screenName
+																				+ "@gmail.com?size=50' alt=''><figcaption>"+name+""+location+"</figcaption></figure></li></a>");
+														}
+														
+														else
+														{
 														$("#current-users")
 																.append(
 																		"<li><figure><img class='round-profile-pic' src='https://pikmail.herokuapp.com/"
 																				+ screenName
 																				+ "@gmail.com?size=50' alt=''><figcaption>"+name+""+location+"</figcaption></figure></li>");
+														}
+														
+														
+																				
+																				
 													}
 													}
 
@@ -455,6 +474,36 @@
 									},
 								});
 							});
+							
+							
+							
+							$("#add-whatsapp").click(function() {
+							
+							
+								var email = $("#user-email").html();
+								var mobnumber = $("#whatsappnum").val();
+								var chat="Y";
+								
+								
+								
+
+								$.ajax({
+									url : "ChatFeature",
+									type : 'POST',
+									data : {
+										userEmail : email,
+										mobnumber : mobnumber,
+										chat : chat
+										
+									},
+									success : function(response) {
+										
+									},
+								});
+							});
+							
+							
+							
 							
 							
 							$("#start-db-cron").click(function() {

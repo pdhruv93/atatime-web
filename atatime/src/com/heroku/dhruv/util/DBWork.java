@@ -191,7 +191,32 @@ public class DBWork {
 			
 			if(rs!=null)
 			while (rs.next()) {
-				currUsersList.add(rs.getString(columnName));
+				
+				//get chatFeature status from db..
+				String userName=rs.getString(columnName).split("::")[0];
+				String mobileNumber="";
+				String chat="";
+				
+				ResultSet rs1 = stmt.executeQuery("SELECT * FROM user where email="+userName);
+				
+				while(rs1.next())
+				{
+					mobileNumber=rs.getString("mobnumber");
+					chat=rs.getString("chat");
+					break;
+				}
+				
+				
+				if(chat.equalsIgnoreCase("Y"))
+				{
+					currUsersList.add(rs.getString(columnName)+"::"+mobileNumber);
+				}
+				else
+				{
+					currUsersList.add(rs.getString(columnName)+"::");
+				}
+				
+				
 			}
 			
 			return currUsersList;
@@ -204,6 +229,64 @@ public class DBWork {
 		
 		
 	}
+	
+	
+	
+	
+	public static void chatFeature(String userEmail, String mobnumber, String chat) {
+		try {
+			int index = userEmail.indexOf('@');
+			String screenName = userEmail.substring(0,index);
+			
+			
+			Statement stmt1=connection.createStatement();
+			ResultSet rs1 = stmt1.executeQuery("SELECT * FROM user where email="+screenName);
+			
+			if(rs1!=null && rs1.next()==false)
+			{
+				
+				//user doesnt exists. create new.
+				PreparedStatement stmt3=connection.prepareStatement("INSERT INTO user(email, mobnumber, chat) VALUES(?,?,?)");
+				stmt3.setString(1, screenName);
+				stmt3.setString(2, mobnumber);
+				stmt3.setString(3, chat);
+				stmt3.executeUpdate();
+				
+			}
+			else
+			{
+				
+				Statement stmt2=connection.createStatement();
+				stmt2.executeUpdate("DELETE FROM user where email="+screenName);
+				
+				PreparedStatement stmt3=connection.prepareStatement("INSERT INTO user(email, mobnumber, chat) VALUES(?,?,?)");
+				stmt3.setString(1, screenName);
+				stmt3.setString(2, mobnumber);
+				stmt3.setString(3, chat);
+				stmt3.executeUpdate();
+				
+			}
+			
+			
+			
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	public static void startCron()
