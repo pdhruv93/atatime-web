@@ -197,7 +197,7 @@ public class DBWork {
 				String mobileNumber="";
 				String chat="";
 				
-				ResultSet rs1 = stmt.executeQuery("SELECT * FROM user where email="+userName);
+				ResultSet rs1 = stmt.executeQuery("SELECT * FROM usermobnumber where email="+userName);
 				
 				while(rs1.next())
 				{
@@ -240,13 +240,13 @@ public class DBWork {
 			
 			
 			Statement stmt1=connection.createStatement();
-			ResultSet rs1 = stmt1.executeQuery("SELECT * FROM user where email="+screenName);
+			ResultSet rs1 = stmt1.executeQuery("SELECT * FROM usermobnumber where email="+screenName);
 			
 			if(rs1!=null && rs1.next()==false)
 			{
 				
 				//user doesnt exists. create new.
-				PreparedStatement stmt3=connection.prepareStatement("INSERT INTO user(email, mobnumber, chat) VALUES(?,?,?)");
+				PreparedStatement stmt3=connection.prepareStatement("INSERT INTO usermobnumber(email, mobnumber, chat) VALUES(?,?,?)");
 				stmt3.setString(1, screenName);
 				stmt3.setString(2, mobnumber);
 				stmt3.setString(3, chat);
@@ -259,10 +259,7 @@ public class DBWork {
 				Statement stmt2=connection.createStatement();
 				stmt2.executeUpdate("DELETE FROM user where email="+screenName);
 				
-				PreparedStatement stmt3=connection.prepareStatement("INSERT INTO user(email, mobnumber, chat) VALUES(?,?,?)");
-				stmt3.setString(1, screenName);
-				stmt3.setString(2, mobnumber);
-				stmt3.setString(3, chat);
+				PreparedStatement stmt3=connection.prepareStatement("UPDATE usermobnumber SET chat="+chat+" where email="+screenName);
 				stmt3.executeUpdate();
 				
 			}

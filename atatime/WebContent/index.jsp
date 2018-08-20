@@ -502,6 +502,34 @@
 								});
 							});
 							
+							$("#no-whatsapp").click(function() {
+							
+							
+								var email = $("#user-email").html();
+								var mobnumber = $("#whatsappnum").val();
+								var chat="N";
+								
+								
+								
+
+								$.ajax({
+									url : "ChatFeature",
+									type : 'POST',
+									data : {
+										userEmail : email,
+										mobnumber : mobnumber,
+										chat : chat
+										
+									},
+									success : function(response) {
+										
+									},
+								});
+							});
+							
+							
+							
+							
 							
 							
 							
