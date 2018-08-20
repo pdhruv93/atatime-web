@@ -118,7 +118,7 @@ public class DBWork {
 			
 			
 			if(location==null)
-				location="";
+				location="location";
 			
 			
 			boolean userdetailsexists=false;

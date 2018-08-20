@@ -283,15 +283,16 @@
 				<hr class="primary">
 				<p class="text-faded">Mark your preference if you wish that other users can chat on Whatsapp with you.<br>
 				You always have an option to change it later.<br><br>
-				Other users who have enabled <b>CHAT ON WHATSAPP</b> feature have their names in Green <br>
-				Just click on their profile image and you are ready to go. Just don't spam anyone.<br>
+				You cannot chat with users who have disabled this option for them<br>
+				To begin chat Just click on their profile image and you are ready to go. Just don't spam anyone.<br>
 				<br><br>
-				<b>Omit any zeroes, brackets or dashes,plus symbol when adding the phone number in international format.</b>
+				<b>Omit any zeroes, brackets or dashes,plus symbol when adding the phone number in international format. Suppose you have
+				your mobile number as +91 878726282628, so enter 91878726282628</b>
 				</p>
 				<br>
 				
 					  <input id="whatsappnum" required >
-					<br>
+					<br><br>
 					<a id="add-whatsapp" class="btn btn-default btn-xl js-scroll-trigger" style="cursor: pointer;color:black;">Enable this feature</a>
 				
 				<br><br>
@@ -400,7 +401,7 @@
 														var location=response[i].split("::")[2];
 														var mobnumber=response[i].split("::")[3];
 														
-													if(location!=null && location!="")
+													if(location!=null && location!="" && location!="location")
 													{
 														location="@"+location;
 													}
@@ -415,7 +416,7 @@
 																.append(
 																		"<a href='"+chattext+"'><li><figure><img class='round-profile-pic' src='https://pikmail.herokuapp.com/"
 																				+ screenName
-																				+ "@gmail.com?size=50' alt=''><figcaption>"+name+""+location+"</figcaption></figure></li></a>");
+																				+ "@gmail.com?size=50' alt=''><figcaption style='color:#353331'>"+name+""+location+"</figcaption></figure></li></a>");
 														}
 														
 														else
@@ -424,7 +425,7 @@
 																.append(
 																		"<li><figure><img class='round-profile-pic' src='https://pikmail.herokuapp.com/"
 																				+ screenName
-																				+ "@gmail.com?size=50' alt=''><figcaption>"+name+""+location+"</figcaption></figure></li>");
+																				+ "@gmail.com?size=50' alt=''><figcaption style='color:#353331'>"+name+""+location+"</figcaption></figure></li>");
 														}
 														
 														
