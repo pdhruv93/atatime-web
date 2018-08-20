@@ -292,10 +292,10 @@
 				
 					  <input id="whatsappnum" required >
 					<br>
-					<a id="add-whatsapp" class="btn btn-default btn-xl js-scroll-trigger" style="cursor: pointer;">Enable this feature</a>
+					<a id="add-whatsapp" class="btn btn-default btn-xl js-scroll-trigger" style="cursor: pointer;color:black;">Enable this feature</a>
 				
 				<br><br>
-				<a id="no-whatsapp" class="btn btn-default btn-xl js-scroll-trigger" style="cursor: pointer;">Disable this feature</a>
+				<a id="no-whatsapp" class="btn btn-default btn-xl js-scroll-trigger" style="cursor: pointer;color:black;">Disable this feature</a>
 				
 			</div>
 		</div>

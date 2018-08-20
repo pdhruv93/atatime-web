@@ -238,30 +238,35 @@ public class DBWork {
 			int index = userEmail.indexOf('@');
 			String screenName = userEmail.substring(0,index);
 			
-			
 			Statement stmt1=connection.createStatement();
-			ResultSet rs1 = stmt1.executeQuery("SELECT * FROM usermobnumber where email="+screenName);
+			
+			ResultSet rs1 = stmt1.executeQuery("SELECT * FROM usermobnumber where email='"+screenName+"'");
 			
 			if(rs1!=null && rs1.next()==false)
 			{
 				
 				//user doesnt exists. create new.
+				System.out.println("::::6"); 
 				PreparedStatement stmt3=connection.prepareStatement("INSERT INTO usermobnumber(email, mobnumber, chat) VALUES(?,?,?)");
+				System.out.println("::::8"); 
 				stmt3.setString(1, screenName);
 				stmt3.setString(2, mobnumber);
 				stmt3.setString(3, chat);
 				stmt3.executeUpdate();
+				System.out.println("::::9"); 
 				
 			}
 			else
 			{
+				System.out.println("::::10"); 
 				
-				PreparedStatement stmt3=connection.prepareStatement("UPDATE usermobnumber SET chat="+chat+" where email="+screenName);
-				stmt3.executeUpdate();
+				Statement st7=connection.createStatement();
+				st7.executeUpdate("UPDATE usermobnumber SET chat='"+chat+"',mobnumber='"+mobnumber+"' where email='"+screenName+"'");
+				System.out.println("::::11"); 
 				
 			}
 			
-			
+			System.out.println("::::15"); 
 			
 			
 			
