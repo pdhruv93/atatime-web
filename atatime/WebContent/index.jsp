@@ -116,6 +116,10 @@
 				<li class="nav-item" style="display: none;"><a
 					id="temp-div-front-click" class="nav-link js-scroll-trigger"
 					href="#front">11111</a></li>
+					
+					<li class="nav-item" style="display: none;"><a
+					id="temp-div-about-click" class="nav-link js-scroll-trigger"
+					href="#about">11111</a></li>
 
 
 				<li class="nav-item" style="display: none;"><a
@@ -290,7 +294,7 @@
 					  <input type="submit" class="badge badge-success" value="Yes I am in!!">
 				</form>
 				
-				<span class="badge badge-danger">No. Maybe Later</span>
+				<a id="no-whatsapp" class="btn btn-default btn-xl js-scroll-trigger">No. Maybe Later</a>
 				
 			</div>
 		</div>
@@ -361,6 +365,10 @@
 								} else if (signinstatus == "in") {
 									$("#temp-div-portfolio-click").click();
 								}
+							});
+							
+							$("#no-whatsapp").click(function() {
+									$("#temp-div-about-click").click();
 							});
 
 							function hitDB() {
