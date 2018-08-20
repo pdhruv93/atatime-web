@@ -196,6 +196,9 @@ public class DBWork {
 			while (rs.next()) {
 				
 				//get chatFeature status from db..
+				if(rs.getString(columnName)==null || rs.getString(columnName).equals(""))
+					continue;
+				
 				System.out.println(":::::::::"+rs.getString(columnName)+":::"+columnName+"::"+activity);
 				String userName=rs.getString(columnName).split("::")[0];
 				String mobileNumber="";
