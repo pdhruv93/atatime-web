@@ -15,6 +15,7 @@ import java.util.Date;
 
 public class DBWork {
 	public static Connection connection;
+	public static Connection connection2;
 	
 	static {
 		
@@ -42,6 +43,7 @@ public class DBWork {
 				+ "?sslmode=require&ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
 		try {
 			connection= DriverManager.getConnection(dbUrl, username, password);
+			connection2= DriverManager.getConnection(dbUrl, username, password);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -257,7 +259,7 @@ public class DBWork {
 			else
 			{
 				
-				Statement st7=connection.createStatement();
+				Statement st7=connection2.createStatement();
 				st7.executeUpdate("UPDATE usermobnumber SET chat='"+chat+"',mobnumber='"+mobnumber+"' where email='"+screenName+"'");
 				
 			}
