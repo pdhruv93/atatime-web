@@ -166,13 +166,11 @@
 					mark your current activity with Tags. <br>and check how many
 					others are doing the same activity<br>And thats it. <br>@@time
 					is ready!!
+					<br></br>
+					with the new upgrade, you can even <b>chat</b> with the other users <b>on Whatsapp</b>.<br>
+					To set your preference go to your profile section at the top.
 				</p>
-				<p>
-				with the new upgrade, you can even chat with the other users on Whatsapp. </br>
-				other users who have enabled <b>CHAT ON WHATSAPP</b> feature on their profile would have a green border around their profile image. <br>
-				Just click on their profile image and you are ready to go. Just don't spam anyone.<br>
-				To set your chat on whatsapp preference go to your profile section at the top.
-				</p>
+				
 				<a id="start-here" class="btn btn-default btn-xl js-scroll-trigger">Can't
 					Wait.Start Here!!!</a>
 			</div>
@@ -278,7 +276,11 @@
 				<h2 class="section-heading">Your Profile</h2>
 				<hr class="primary">
 				<p>Mark your preference if you wish that other users can chat on Whatsapp with you.<br>
-				You always have an option to change it later.
+				You always have an option to change it later.<br><br>
+				Other users who have enabled <b>CHAT ON WHATSAPP</b> feature on their profile would have a green border around their profile image. <br>
+				Just click on their profile image and you are ready to go. Just don't spam anyone.<br>
+				<br><br>
+				<b>Omit any zeroes, brackets or dashes,plus symbol when adding the phone number in international format.</b>
 				</p>
 				<br>
 				
@@ -288,25 +290,11 @@
 					  <input type="submit" class="badge badge-success" value="Yes I am in!!">
 				</form>
 				
-				
-				
-				
 				<span class="badge badge-danger">No. Maybe Later</span>
 				
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-lg-4 ml-auto text-center">
-				<i class="fa fa-phone fa-3x sr-contact"></i>
-				<p>+91 9899879902</p>
-			</div>
-			<div class="col-lg-4 mr-auto text-center">
-				<i class="fa fa-envelope-o fa-3x sr-contact"></i>
-				<p>
-					<a href="mailto:dhruv.pandey93@gmail.com">Mail</a>
-				</p>
-			</div>
-		</div>
+		
 	</div>
 	</section>
 
