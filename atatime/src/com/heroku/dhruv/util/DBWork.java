@@ -256,9 +256,6 @@ public class DBWork {
 			else
 			{
 				
-				Statement stmt2=connection.createStatement();
-				stmt2.executeUpdate("DELETE FROM user where email="+screenName);
-				
 				PreparedStatement stmt3=connection.prepareStatement("UPDATE usermobnumber SET chat="+chat+" where email="+screenName);
 				stmt3.executeUpdate();
 				
