@@ -96,8 +96,13 @@
 		id="mainNav">
 	<div class="container">
 		<a id="logo" class="navbar-brand js-scroll-trigger" href="#portfolio"
-			style="visibility: hidden">@@time</a> <img style="padding-left: 0%"
+			style="visibility: hidden">@@time</a> 
+			<img style="padding-left: 0%"
 			id="myImg">
+			<span class="dot" style="background-color:green"></span>
+			</img>
+			
+			
 
 		<button class="navbar-toggler navbar-toggler-right" type="button"
 			data-toggle="collapse" data-target="#navbarResponsive"
@@ -273,7 +278,7 @@
 
 
 
-	<section id="your-profile">
+	<section id="your-profile" style="background-color:rgb(0, 123, 255)">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 mx-auto text-center">
