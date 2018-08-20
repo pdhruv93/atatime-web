@@ -99,9 +99,6 @@
 			style="visibility: hidden">@@time</a> 
 			<img style="padding-left: 0%"
 			id="myImg">
-			<span class="dot" style="background-color:green"></span>
-			</img>
-			
 			
 
 		<button class="navbar-toggler navbar-toggler-right" type="button"
@@ -286,7 +283,7 @@
 				<hr class="primary">
 				<p>Mark your preference if you wish that other users can chat on Whatsapp with you.<br>
 				You always have an option to change it later.<br><br>
-				Other users who have enabled <b>CHAT ON WHATSAPP</b> feature on their profile would have a green border around their profile image. <br>
+				Other users who have enabled <b>CHAT ON WHATSAPP</b> feature have their names in Green <br>
 				Just click on their profile image and you are ready to go. Just don't spam anyone.<br>
 				<br><br>
 				<b>Omit any zeroes, brackets or dashes,plus symbol when adding the phone number in international format.</b>
