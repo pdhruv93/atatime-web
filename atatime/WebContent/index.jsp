@@ -404,6 +404,7 @@
 														var name=response[i].split("::")[1];
 														var location=response[i].split("::")[2];
 														var mobnumber=response[i].split("::")[3];
+														var senderName=$("#user-name").html();
 														
 													if(location!=null && location!="" && location!="location")
 													{
@@ -414,7 +415,7 @@
 														if(mobnumber!=null && mobnumber!="")
 														{
 														
-														var chattext="https://wa.me/"+mobnumber+"?text=Hi!%20Its%20"+name+"%20this%20side.%20I%20saw%20you%20on%20@@time%20and%20found%20you%20are%20also%20"+curActivity+".%20Wanna%20chat!!";
+														var chattext="https://wa.me/"+mobnumber+"?text=Hi!%20Its%20"+senderName+"%20this%20side.%20I%20saw%20you%20on%20@@time%20and%20found%20you%20are%20also%20"+curActivity+".%20Wanna%20chat!!";
 														
 														$("#current-users")
 																.append(
