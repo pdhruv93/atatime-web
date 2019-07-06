@@ -465,9 +465,6 @@
 								var location = $("#user-location").html();
 								var profileImage = $("#user-profileimage").html();
 								
-								user-profileimage
-								
-
 								$.ajax({
 									url : "AddActivityToDB",
 									type : 'POST',
