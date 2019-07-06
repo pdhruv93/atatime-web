@@ -50,7 +50,7 @@ public class DBWork {
 		}
 	}
 
-	public static void addActivityToDB(String activity, String userId, String userName, String location) {
+	public static void addActivityToDB(String activity, String userId, String userName, String location, String profileImage) {
 		try {
 			String columnName="";
 			
@@ -124,10 +124,11 @@ public class DBWork {
 			boolean userdetailsexists=false;
 			Statement stmt7=connection.createStatement();
 			ResultSet rs7 = stmt7.executeQuery("SELECT details from userstrack");
+			String profilePicURL=profileImage.replace("https://lh3.googleusercontent.com/", "");
 			
 			if(rs7!=null)
 			while (rs7.next()) {
-				if(rs7.getString("details")!=null && rs7.getString("details").equals(screenName+":"+activity))
+				if(rs7.getString("details")!=null && rs7.getString("details").equals(screenName+":"+activity+":"+profilePicURL))
 				{
 					userdetailsexists=true;
 					break;
@@ -139,7 +140,7 @@ public class DBWork {
 			{
 				
 				PreparedStatement stmt3=connection.prepareStatement("INSERT INTO userstrack(details) VALUES(?)");
-				stmt3.setString(1, screenName+":"+activity);
+				stmt3.setString(1, screenName+":"+activity+":"+profilePicURL);
 				stmt3.executeUpdate();
 			}
 			
@@ -214,13 +215,34 @@ public class DBWork {
 				}
 				
 				
+				Statement stmt8=connection.createStatement();
+				ResultSet rs8 = stmt8.executeQuery("SELECT details from userstrack");
+				String profilePicURL="";
+				
+				if(rs8!=null)
+				while (rs8.next()) {
+					if(rs8.getString("details")!=null && rs8.getString("details").contains(userName))
+					{
+						
+						try {
+							if(rs8.getString("details").split(":")[3]!=null && ! rs8.getString("details").split(":")[3].equals(""))
+							profilePicURL=rs8.getString("details").split(":")[3];
+						}catch(Exception e)
+						{
+							//there might be old data which does not have profile image fix
+							continue;
+						}
+					}
+				}
+				
+				
 				if(chat.equalsIgnoreCase("Y"))
 				{
-					currUsersList.add(rs.getString(columnName)+"::"+mobileNumber);
+					currUsersList.add(rs.getString(columnName)+"::"+mobileNumber+"::"+profilePicURL);
 				}
 				else
 				{
-					currUsersList.add(rs.getString(columnName)+"::");
+					currUsersList.add(rs.getString(columnName)+"::"+"::"+profilePicURL);
 				}
 				
 				

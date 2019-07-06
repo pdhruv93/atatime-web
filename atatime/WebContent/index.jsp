@@ -61,6 +61,7 @@
 			// window.location.href='success.jsp';
 			var profile = googleUser.getBasicProfile();
 			var imagurl = profile.getImageUrl();
+			
 			//var name = profile.getName();
 			var name = profile.getGivenName();
 			var email = profile.getEmail();
@@ -72,6 +73,7 @@
 
 			document.getElementById("user-email").innerHTML = email;
 			document.getElementById("user-name").innerHTML = name;
+			document.getElementById("user-profileimage").innerHTML = imagurl;
 
 			document.getElementById("signin-status").innerHTML = "in";
 
@@ -307,6 +309,7 @@
 	<div id="user-email" style="visibility: hidden;"></div>
 	<div id="user-name" style="visibility: hidden;"></div>
 	<div id="user-location" style="visibility: hidden;"></div>
+	<div id="user-profileimage" style="visibility: hidden;"></div>
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
@@ -404,6 +407,7 @@
 														var name=response[i].split("::")[1];
 														var location=response[i].split("::")[2];
 														var mobnumber=response[i].split("::")[3];
+														var profilePicURL=response[i].split("::")[4];
 														var senderName=$("#user-name").html();
 														
 													if(location!=null && location!="" && location!="location")
@@ -419,18 +423,18 @@
 														
 														$("#current-users")
 																.append(
-																		"<a href='"+chattext+"'><li><figure><img class='round-profile-pic' src='https://pikmail.herokuapp.com/"
-																				+ screenName
-																				+ "@gmail.com?size=50' alt=''><figcaption style='color:#353331'>"+name+""+location+"</figcaption></figure></li></a>");
+																		"<a href='"+chattext+"'><li><figure><img class='round-profile-pic' src='https://lh3.googleusercontent.com/"
+																				+ profilePicURL
+																				+ " alt=''><figcaption style='color:#353331'>"+name+""+location+"</figcaption></figure></li></a>");
 														}
 														
 														else
 														{
 														$("#current-users")
 																.append(
-																		"<li><figure><img class='round-profile-pic' src='https://pikmail.herokuapp.com/"
-																				+ screenName
-																				+ "@gmail.com?size=50' alt=''><figcaption style='color:#353331'>"+name+""+location+"</figcaption></figure></li>");
+																		"<li><figure><img class='round-profile-pic' src='https://lh3.googleusercontent.com/"
+																				+ profilePicURL
+																				+ " alt=''><figcaption style='color:#353331'>"+name+""+location+"</figcaption></figure></li>");
 														}
 														
 														
@@ -459,6 +463,9 @@
 								var email = $("#user-email").html();
 								var name = $("#user-name").html();
 								var location = $("#user-location").html();
+								var profileImage = $("#user-profileimage").html();
+								
+								user-profileimage
 								
 
 								$.ajax({
@@ -468,7 +475,8 @@
 										activity : curActivity,
 										userEmail : email,
 										userName : name,
-										location: location
+										location: location,
+										profileImage: profileImage
 									},
 									success : function(response) {
 									hitDB();
