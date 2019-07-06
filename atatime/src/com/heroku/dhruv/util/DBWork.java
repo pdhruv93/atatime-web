@@ -225,8 +225,8 @@ public class DBWork {
 					{
 						
 						try {
-							if(rs8.getString("details").split(":")[3]!=null && ! rs8.getString("details").split(":")[3].equals(""))
-							profilePicURL=rs8.getString("details").split(":")[3];
+							if(rs8.getString("details").split(":")[2]!=null && ! rs8.getString("details").split(":")[2].equals(""))
+							profilePicURL=rs8.getString("details").split(":")[2];
 						}catch(Exception e)
 						{
 							//there might be old data which does not have profile image fix

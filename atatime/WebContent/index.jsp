@@ -410,6 +410,11 @@
 														var profilePicURL=response[i].split("::")[4];
 														var senderName=$("#user-name").html();
 														
+														if(profilePicURL=="")
+															{
+															profilePicURL="-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/V8BNOaftJmYe8AS5H__tDVzhxSsqodSRACLcDEAE/s100/photo.jpg";
+															}
+														
 													if(location!=null && location!="" && location!="location")
 													{
 														location="@"+location;
