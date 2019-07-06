@@ -430,7 +430,7 @@
 																.append(
 																		"<a href='"+chattext+"'><li><figure><img class='round-profile-pic' src='https://lh3.googleusercontent.com/"
 																				+ profilePicURL
-																				+ " alt=''><figcaption style='color:#353331'>"+name+""+location+"</figcaption></figure></li></a>");
+																				+ "' alt=''><figcaption style='color:#353331'>"+name+""+location+"</figcaption></figure></li></a>");
 														}
 														
 														else
@@ -439,7 +439,7 @@
 																.append(
 																		"<li><figure><img class='round-profile-pic' src='https://lh3.googleusercontent.com/"
 																				+ profilePicURL
-																				+ " alt=''><figcaption style='color:#353331'>"+name+""+location+"</figcaption></figure></li>");
+																				+ "' alt=''><figcaption style='color:#353331'>"+name+""+location+"</figcaption></figure></li>");
 														}
 														
 														
