@@ -40,6 +40,19 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="google-signin-client_id"
 	content="914585353435-83v6394gvdfbu8d9fl94rjio1a76fs0i.apps.googleusercontent.com">
+	
+	
+<!-- PushAlert -->
+        <script type="text/javascript">
+                (function(d, t) {
+                        var g = d.createElement(t),
+                        s = d.getElementsByTagName(t)[0];
+                        g.src = "https://cdn.pushalert.co/integrate_022519749f3c2da4079bb9f5949db2a6.js";
+                        s.parentNode.insertBefore(g, s);
+                }(document, "script"));
+        </script>
+        <!-- End PushAlert -->
+        
 </head>
 
 
