@@ -1,0 +1,85 @@
+<head>
+	<link href="styles.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+	<script src="firebase_config.js"></script>
+	<script src="script.js"></script>
+	<script src="user.js"></script>
+</head>
+
+<body>
+	<div class="parent-container">
+		<div class="header red-background">
+			<div>
+				<img class="profile-pic" src="https://www.fairtravel4u.org/wp-content/uploads/2018/06/sample-profile-pic.png">
+			</div>
+			<div class="profile-name x-small">
+				Dhruv Pandey
+			</div>
+		
+		
+		</div>
+		
+		<div class="section section-intro red-background">
+			<div class="font-big">
+				We've got what you need!
+			</div>
+			<br><br>
+			<div class="font-small flex-column">
+				<div>
+					mark your current activity with Tags and check how many others are doing the same activity
+				</div>
+				<div>
+					And thats it. @@time is ready!!
+				</div>
+			</div>
+			<br><br>
+			<div class="round-button" id="start-here">
+				Can't Wait. Start Here!!!
+			</div>
+		</div>
+		
+		<div class="section section-activity-list blue-background">
+			<div class="font-big">
+				Tag your activities
+			</div>
+			<br><br>
+			<div class="font-small flex-column">
+				choose the tag which closely relates to your activity
+			</div>
+			<br><br>
+			<div class="flex-row activities">
+				<!-- will come from javascript-->
+			</div>
+		</div>
+		
+		
+		<div class="section section-other-people red-background">
+			<div class="font-big">
+				People with same activity!
+			</div>
+			<br><br>
+			<div class="font-small flex-column">
+				these are the people performing same acitivity as yours
+			</div>
+			<br><br><br>
+			<div class="flex-row card-list">
+				<!--<div class="card">
+					<div>
+						<img class="card-image" src="https://www.fairtravel4u.org/wp-content/uploads/2018/06/sample-profile-pic.png">
+					</div>
+					<br>
+					<div>Dhruv Pandey</div>
+					<div>Helsinki Finland</div>
+				</div>-->
+			</div>
+			<br><br><br><br>
+			<div class="round-button" id="check-more">
+				Cool Tag more activity!!!
+			</div>
+		</div>
+		
+		
+	</div>
+</body>
