@@ -1,3 +1,12 @@
+<h2>Idea</h2>
+On a Wednesday night traveling by cab, I felt how many people would be doing the same activity as me at the same time. That's when I started implementing @@time(at a time). 
+
+@@time is a simple application that lets users mark their current activity and then check the list of
+other users doing the same activity at that time around the world.
+
+Check the react-native version <a href="https://github.com/pdhruv93/atatime-react-native-final">here</a>
+
+
 <h2>Intro Screen</h2>
 <img src="screenshots/1.PNG">
 
