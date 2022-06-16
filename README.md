@@ -4,9 +4,7 @@ On a Wednesday night traveling by cab, I felt how many people would be doing the
 @@time is a simple application that lets users mark their current activity and then check the list of
 other users doing the same activity at that time around the world.
 
-> This a legacy app and not mantained or upgraded anymore.
-> Check the latest React+TypeScript version <a target="_blank" href="https://github.com/pdhruv93/atatime-web-react">here</a>
-> Check the react-native version <a target="_blank" href="https://github.com/pdhruv93/atatime-react-native-final">here</a>
+> **This a legacy app and not mantained or upgraded anymore. Check the latest React+TypeScript version <a target="_blank" href="https://github.com/pdhruv93/atatime-web-react">here</a>. Check the react-native version <a target="_blank" href="https://github.com/pdhruv93/atatime-react-native-final">here</a>**
 
 
 <h2>Intro Screen</h2>
